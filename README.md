@@ -42,11 +42,12 @@ ImageBuilder.builder()
                 }
               });               
                
-               
+ ```              
                
  ### 预览大图
-ImageBuilder.builder().startPreviewActivity(...);              
-               
+```
+ImageBuilder.builder().startPreviewActivity(...);             
+```              
                
                
                
