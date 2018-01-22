@@ -40,14 +40,15 @@ ImageBuilder.builder()
                     // .. 加载图片
                   }
                 }
-              });               
-               
- ```              
-               
- ### 预览大图
+              });                        
+             
 ```
-ImageBuilder.builder().startPreviewActivity(...);             
-```              
+
+### 预览大图
+```ImageBuilder.builder().startPreviewActivity(...);  ```
+
+           
+             
                
                
                

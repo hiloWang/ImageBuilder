@@ -50,12 +50,15 @@ public class ExampleActivity extends AppCompatActivity {
       @Override public void onClick(View v) {
         if (originImgsPath != null && originImgsPath.size() > 0) {
           ImageBuilder.builder()
-              .gridColumnCount(3)
-              .multiMode(true)
-              .selected(originImgsPath)
-              .imageLoader(new PicassoImageLoader())
-              .showOriginImageCheckbox(true)
-              .previewEnabled(false)
+              .gridColumnCount(3) // 图片显示密度
+              .multiMode(true) // 多选 default
+              .selected(originImgsPath) // 回显已选择的图片
+              .imageLoader(new PicassoImageLoader()) // 默认GlideImageLoader,需要引入Glide4.x
+              .showOriginImageCheckbox(true) // 是否显示原图checkbox
+              .previewEnabled(false) // 是否可预览大图
+              .showCompressImageSizeLog(false) // 是否打印压缩前后大小，默认false，log：ImageBuilder
+              .showCamera(true) // 是否显示相机按钮 默认true
+              .cropEnable(false) // 是否可以剪裁 默认false
               .start(ExampleActivity.this, new ActivityResultListener() {
                 @Override public void onActivityResult(ArrayList<ImageItem> originImgsPath,
                     ArrayList<String> compressImgsPath, int resultCode, boolean isCompress) {
@@ -66,6 +69,7 @@ public class ExampleActivity extends AppCompatActivity {
 
                   if (resultCode == ImageBuilder.RESULT_CODE_SELECTED_IMAGE) {
 
+                    // .. 加载图片
                     Picasso.with(ExampleActivity.this)
                         .load(Uri.fromFile(new File(originImgsPath.get(0).path)))
                         .placeholder(R.drawable.ic_launcher_background)
@@ -95,7 +99,7 @@ public class ExampleActivity extends AppCompatActivity {
     findViewById(cn.lak.imagebuilder.R.id.text_view).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
         ImageBuilder.builder()
-            .gridColumnCount(3)
+            .gridColumnCount(5)
             .multiMode(true)
             .previewEnabled(true)
             .showCompressImageSizeLog(true)
