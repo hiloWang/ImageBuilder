@@ -4,12 +4,20 @@
 # Usage
 ### Gradle
 ```groov
+
+ext {
+  supportLibVersion = "26.1.0"
+  photoViewVersion = "2.1.3"
+  glideVersion = "4.2.0"
+  picassoVersion = "2.5.2"
+}
+
+// ** 使用者需引入以下依赖包 **
 dependencies 
-    compile 'me.iwf.photopicker:PhotoPicker:0.9.12@aar
-    compile 'com.android.support:appcompat-v7:23.4.0
-    compile 'com.android.support:recyclerview-v7:23.4.0
-    compile 'com.android.support:design:23.4.0
-    compile 'com.github.bumptech.glide:glide:4.1.1
+    implementation "com.android.support:appcompat-v7:$supportLibVersion"
+    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+    implementation "com.github.chrisbanes:PhotoView:$photoViewVersion"
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
 }
 ```
 
