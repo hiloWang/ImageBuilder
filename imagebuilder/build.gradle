@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+
+ext {
+  supportLibVersion = "26.1.0"
+  photoViewVersion = "2.1.3"
+  glideVersion = "4.2.0"
+  picassoVersion = "2.5.2"
+}
+
+android {
+  compileSdkVersion 26
+  buildToolsVersion '26.0.2'
+  resourcePrefix "__lakimage_"
+
+  dexOptions {
+    javaMaxHeapSize "4g"
+  }
+  defaultConfig {
+    minSdkVersion 15
+    targetSdkVersion 26
+  }
+  lintOptions {
+    abortOnError false
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  implementation "com.android.support:appcompat-v7:$supportLibVersion"
+  implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+  implementation "com.github.chrisbanes:PhotoView:$photoViewVersion"
+  implementation "com.github.bumptech.glide:glide:$glideVersion"
+//  implementation "com.squareup.picasso:picasso:$picassoVersion"
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="__lakimage_CropImageView">
+        <attr name="__lakimage_cropMaskColor" format="color"/>
+        <attr name="__lakimage_cropBorderColor" format="color"/>
+        <attr name="__lakimage_cropBorderWidth" format="dimension"/>
+        <attr name="__lakimage_cropFocusWidth" format="dimension"/>
+        <attr name="__lakimage_cropFocusHeight" format="dimension"/>
+        <attr name="__lakimage_cropStyle" format="enum">
+            <enum name="rectangle" value="0"/>
+            <enum name="circle" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

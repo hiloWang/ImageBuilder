@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="__lakimage_ImageBuilderTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:fitsSystemWindows">true</item>
+  </style>
+
+  <style name="__lakimage_ImageBuilderThemeFullScreen" parent="__lakimage_ImageBuilderTheme">
+    <item name="android:fitsSystemWindows">false</item>
+  </style>
+
+  <!--SuperCheckbox的样式-->
+  <style name="__lakimage_SuperCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+    <item name="android:button">@drawable/__lakimage_selector_item_checked</item>
+  </style>
+
+  <style name="__lakimage_popupwindow_anim_style">
+    <!-- 指定显示的动画xml -->
+    <item name="android:windowEnterAnimation">@anim/__lakimage_show_from_bottom</item>
+    <!-- 指定消失的动画xml -->
+    <item name="android:windowExitAnimation">@anim/__lakimage_hide_to_bottom</item>
+  </style>
+</resources>
