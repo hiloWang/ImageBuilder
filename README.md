@@ -16,7 +16,8 @@ dependencies
 * ```appcompat-v7```version >= 26.0.2
 
 ### 选择图片
-```ImageBuilder.builder()
+```
+ImageBuilder.builder()
               .gridColumnCount(3) // 图片显示密度
               .multiMode(true) // 多选 default
               .selected(originImgsPath) // 回显已选择的图片
