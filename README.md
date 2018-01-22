@@ -23,8 +23,11 @@ ImageBuilder.builder()
               .selected(originImgsPath) // 回显已选择的图片
               .imageLoader(new PicassoImageLoader()) // 默认GlideImageLoader
               .showOriginImageCheckbox(true) // 是否显示原图checkbox
-              .previewEnabled(false) // 是否可预览大图
-              .start(ExampleActivity.this, new ActivityResultListener() {
+              .previewEnabled(false) // 是否可预览大图
+              .showCompressImageSizeLog(true) // 是否打印压缩前后大小，默认false，log：ImageBuilder   
+              .showCamera(true) // 是否显示相机按钮 默认true
+              .cropEnable(false) // 是否可以剪裁 默认false
+              .start(ExampleActivity.this, new ActivityResultListener() {
                 @Override public void onActivityResult(ArrayList<ImageItem> originImgsPath,
                     ArrayList<String> compressImgsPath, int resultCode, boolean isCompress) {
                   // 原始图
@@ -37,6 +40,15 @@ ImageBuilder.builder()
                     // .. 加载图片
                   }
                 }
-              })
-```
-
+              });               
+               
+               
+               
+ ### 预览大图
+ImageBuilder.builder().startPreviewActivity(...);              
+               
+               
+               
+               
+               
+               
