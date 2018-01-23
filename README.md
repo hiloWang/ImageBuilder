@@ -23,6 +23,9 @@ dependencies
 
 * ```appcompat-v7```version >= 26.0.2
 
+### 引入
+compile 'com.lak.imagebuilder:imagebuilder:1.0'
+
 ### 选择图片
 ```
 ImageBuilder.builder()

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply from: 'https://raw.githubusercontent.com/lijy91/gradle-mvn-push/master/gradle-mvn-push.gradle'
 
 ext {
   supportLibVersion = "26.1.0"

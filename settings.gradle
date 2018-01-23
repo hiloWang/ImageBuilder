@@ -1,1 +1,1 @@
-include ':app', ':imagebuilder'
+include ':example', ':imagebuilder'
