@@ -76,7 +76,11 @@ ImageBuilder.builder()
              
                
 ### 参考
-PhotoPicker [https://github.com/donglua/PhotoPicker]
-ImagePicker [https://github.com/jeasonlzy/ImagePicker]
+* [https://github.com/donglua/PhotoPicker](https://github.com/donglua/PhotoPicker) 
+* [https://github.com/jeasonlzy/ImagePicker](https://github.com/jeasonlzy/ImagePicker)
                
-               
+
+喜欢原作的可以去使用。同时欢迎大家下载体验本项目，如果使用过程中遇到什么问题，欢迎反馈。
+
+## 联系方式
+ * email： developerlak@gmail.com
