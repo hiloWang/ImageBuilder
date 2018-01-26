@@ -24,7 +24,21 @@ dependencies
 * ```appcompat-v7```version >= 26.0.2
 
 ### 引入
-compile 'com.lak.imagebuilder:imagebuilder:1.0'
+Add it in your root build.gradle at the end of repositories:
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Step 2. Add the dependency
+```
+	dependencies {
+	        compile 'com.github.hiloWang:ImageBuilder:1.0'
+	}
+```
 
 ### 选择图片
 ```
