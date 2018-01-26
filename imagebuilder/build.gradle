@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
-apply from: 'https://raw.githubusercontent.com/lijy91/gradle-mvn-push/master/gradle-mvn-push.gradle'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.lak'
+version = '1.0'
 
 ext {
   supportLibVersion = "26.1.0"
