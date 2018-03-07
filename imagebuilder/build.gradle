@@ -13,7 +13,7 @@ ext {
 
 android {
   compileSdkVersion 25
-  buildToolsVersion '26.0.2'
+  buildToolsVersion '25.0.3'
   resourcePrefix "__lakimage_"
 
   dexOptions {
