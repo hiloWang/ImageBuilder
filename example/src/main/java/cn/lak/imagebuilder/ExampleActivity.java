@@ -23,8 +23,8 @@ public class ExampleActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(cn.lak.imagebuilder.R.layout.activity_example);
 
-    final ImageView image_view = findViewById(R.id.image_view);
-    final ImageView image_view2 = findViewById(R.id.image_view2);
+    final ImageView image_view = (ImageView) findViewById(R.id.image_view);
+    final ImageView image_view2 = (ImageView) findViewById(R.id.image_view2);
 
     image_view.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
