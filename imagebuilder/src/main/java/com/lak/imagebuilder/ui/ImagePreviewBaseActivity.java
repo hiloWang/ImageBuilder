@@ -77,6 +77,7 @@ public abstract class ImagePreviewBaseActivity extends BaseActivity {
 
     //因为状态栏透明后，布局整体会上移，所以给头部加上状态栏的margin值，保证头部不会被覆盖
     topBar = findViewById(R.id.top_bar);
+    mTitleCount = (TextView) findViewById(R.id.tv_des);
     checkboxContainer = (RelativeLayout) findViewById(R.id.checkbox_container);
     if (!isShowTopBar) {
       // 相册选择
@@ -101,8 +102,6 @@ public abstract class ImagePreviewBaseActivity extends BaseActivity {
         finish();
       }
     });
-
-    mTitleCount = (TextView) findViewById(R.id.tv_des);
 
     mViewPager = (ViewPagerFixed) findViewById(R.id.viewpager);
     mAdapter = new ImagePageAdapter(this, mImageItems);
