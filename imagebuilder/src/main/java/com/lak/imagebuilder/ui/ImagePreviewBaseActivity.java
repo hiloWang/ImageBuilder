@@ -24,9 +24,10 @@ public abstract class ImagePreviewBaseActivity extends BaseActivity {
   protected ArrayList<ImageItem> selectedImages;   //所有已经选中的图片
   protected View content;
   protected View topBar;
+  protected RelativeLayout checkboxContainer;
   protected ViewPagerFixed mViewPager;
   protected ImagePageAdapter mAdapter;
-  protected boolean isFromWeakReferenceItems, isShowBottomBar;
+  protected boolean isFromWeakReferenceItems, isShowBottomBar, isShowTopBar;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public abstract class ImagePreviewBaseActivity extends BaseActivity {
         getIntent().getBooleanExtra(ImageBuilderConfig.EXTRA_FROM_WEAK_REFERENCE_ITEMS, true);
     isShowBottomBar =
         getIntent().getBooleanExtra(ImageBuilderConfig.EXTRA_FROM_SHOW_BOTTOM_BAR, true);
+    isShowTopBar = getIntent().getBooleanExtra(ImageBuilderConfig.EXTRA_FROM_SHOW_TOP_BAR, true);
 
     if (isFromWeakReferenceItems) {
       // 默认方式：采用弱引用方式, 仅限于选择照片时启用，为了处理大量照片可能导致崩溃的问题。
@@ -75,6 +77,19 @@ public abstract class ImagePreviewBaseActivity extends BaseActivity {
 
     //因为状态栏透明后，布局整体会上移，所以给头部加上状态栏的margin值，保证头部不会被覆盖
     topBar = findViewById(R.id.top_bar);
+    checkboxContainer = (RelativeLayout) findViewById(R.id.checkbox_container);
+    if (!isShowTopBar) {
+      // 相册选择
+      topBar.setVisibility(View.GONE);
+      mTitleCount.setVisibility(View.VISIBLE);
+      checkboxContainer.setVisibility(View.VISIBLE);
+    } else {
+      // 查看大图
+      topBar.setVisibility(View.VISIBLE);
+      mTitleCount.setVisibility(View.GONE);
+      checkboxContainer.setVisibility(View.GONE);
+    }
+
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
       RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) topBar.getLayoutParams();
       params.topMargin = Utils.getStatusHeight(this);

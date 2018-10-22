@@ -136,10 +136,12 @@ public class ImageBuilder {
       initializedImageLoader();
 
       pickerIntent.putExtra(ImageBuilder.EXTRA_RESULT_ITEMS_ORIGIN, originImages);
+      pickerIntent.putExtra(ImageBuilder.EXTRA_MAX_COUNT, originImages.size());
       pickerIntent.putExtra(ImageBuilder.EXTRA_SELECTED_IMAGE_POSITION, selectedImagePosition);
       pickerIntent.putExtra(ImageBuilder.EXTRA_FROM_WEAK_REFERENCE_ITEMS, false);
       pickerIntent.putExtra(ImageBuilderConfig.EXTRA_FROM_SHOW_BOTTOM_BAR, false);
       if (activityResultListener != null) {
+        pickerIntent.putExtra(ImageBuilderConfig.EXTRA_FROM_SHOW_TOP_BAR, false);
         if (showDelButton) {
           pickerIntent.setClass(activity, ImagePreviewDelActivity.class);
           getActivityResultFragment(activity, activityResultListener).startActivityForResult(

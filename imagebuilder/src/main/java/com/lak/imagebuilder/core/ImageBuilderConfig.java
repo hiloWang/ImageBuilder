@@ -46,6 +46,7 @@ public class ImageBuilderConfig {
   public static final String EXTRA_FROM_WEAK_REFERENCE_ITEMS = "extra_from_weak_reference_items";
   public static final String EXTRA_FROM_SHOW_BOTTOM_BAR = "extra_from_show_bottom_bar";
   public static final String EXTRA_FROM_ORIGIN_IMAGE = "extra_from_origin_image";
+  public static final String EXTRA_FROM_SHOW_TOP_BAR = "extra_from_show_top_bar";
   public static final String EXTRA_IS_SHOW_COMPRESS_IMAGE_SIZE_LOG =
       "extra_is_show_compress_image_size_log";
   public static final String EXTRA_IS_SHOW_ORIGIN_IMAGE_CHECKBOX =

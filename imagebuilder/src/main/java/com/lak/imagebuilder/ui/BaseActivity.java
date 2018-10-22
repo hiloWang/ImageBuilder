@@ -10,8 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
-import com.lak.imagebuilder.core.ImageBuilderConfig;
 import com.lak.imagebuilder.R;
+import com.lak.imagebuilder.core.ImageBuilderConfig;
 import com.lak.imagebuilder.widget.SystemBarTintManager;
 
 public class BaseActivity extends AppCompatActivity {

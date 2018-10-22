@@ -9,10 +9,9 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import com.lak.imagebuilder.core.ImageBuilderConfig;
 import com.lak.imagebuilder.R;
+import com.lak.imagebuilder.core.ImageBuilderConfig;
 import com.lak.imagebuilder.util.NavigationBarChangeListener;
-import com.lak.imagebuilder.util.compress.ImgCompress;
 
 /**
  * 预览已经选择的图片，并可以删除

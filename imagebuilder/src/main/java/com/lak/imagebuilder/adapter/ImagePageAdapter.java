@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.github.chrisbanes.photoview.OnPhotoTapListener;
 import com.github.chrisbanes.photoview.PhotoView;
-import com.lak.imagebuilder.core.ImageBuilderConfig;
 import com.lak.imagebuilder.bean.ImageItem;
+import com.lak.imagebuilder.core.ImageBuilderConfig;
 import com.lak.imagebuilder.util.Utils;
 import java.util.ArrayList;
 

@@ -57,6 +57,7 @@ public class ImagePreviewActivity extends ImagePreviewBaseActivity
     onImageSelected(0, null, false);
     ImageItem item = mImageItems.get(mCurrentPosition);
     boolean isSelected = imageBuilderConfig.isSelect(item);
+    if (mBtnOk.getVisibility() == View.VISIBLE) mTitleCount.setVisibility(View.GONE);
     mTitleCount.setText(getString(R.string.__lakimage_preview_image_count, mCurrentPosition + 1,
         mImageItems.size()));
     mCbCheck.setChecked(isSelected);
@@ -80,7 +81,14 @@ public class ImagePreviewActivity extends ImagePreviewBaseActivity
     //当点击当前选中按钮的时候，需要根据当前的选中状态添加和移除图片
     mCbCheck.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        ImageItem imageItem = mImageItems.get(mCurrentPosition);
+        ImageItem imageItem;
+        // 防止最后一张崩溃
+        if (mCurrentPosition != mImageItems.size()) {
+          imageItem = mImageItems.get(mCurrentPosition);
+        } else {
+          imageItem = mImageItems.get(mCurrentPosition - 1);
+        }
+
         int selectLimit = imageBuilderConfig.getSelectLimit();
         if (mCbCheck.isChecked() && selectedImages.size() >= selectLimit) {
           Toast.makeText(ImagePreviewActivity.this,
