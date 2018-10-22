@@ -17,9 +17,6 @@ import com.lak.imagebuilder.core.ImageBuilderConfig;
 import com.lak.imagebuilder.util.NavigationBarChangeListener;
 import com.lak.imagebuilder.util.Utils;
 import com.lak.imagebuilder.widget.SuperCheckBox;
-import java.util.ArrayList;
-
-import static com.lak.imagebuilder.ImageBuilder.EXTRA_ORIGINAL_PHOTOS;
 
 public class ImagePreviewActivity extends ImagePreviewBaseActivity
     implements ImageBuilderConfig.OnImageSelectedListener, View.OnClickListener,
@@ -72,6 +69,12 @@ public class ImagePreviewActivity extends ImagePreviewBaseActivity
         mCbCheck.setChecked(isSelected);
         mTitleCount.setText(getString(R.string.__lakimage_preview_image_count, mCurrentPosition + 1,
             mImageItems.size()));
+
+        if (imageBuilderConfig.getSelectImageCount() > 1) {
+          mBtnOk.setText(getString(
+              R.string.__lakimage_select_complete, /*imageBuilderConfig.getSelectImageCount()*/
+              mCurrentPosition + 1, imageBuilderConfig.getSelectImageCount()));
+        }
       }
     });
     //当点击当前选中按钮的时候，需要根据当前的选中状态添加和移除图片
@@ -123,10 +126,10 @@ public class ImagePreviewActivity extends ImagePreviewBaseActivity
    * 当调用 addSelectedImageItem 或 deleteSelectedImageItem 都会触发当前回调
    */
   @Override public void onImageSelected(int position, ImageItem item, boolean isAdd) {
-    if (imageBuilderConfig.getSelectImageCount() > 0) {
-      mBtnOk.setText(
-          getString(R.string.__lakimage_select_complete, imageBuilderConfig.getSelectImageCount(),
-              imageBuilderConfig.getSelectLimit()));
+    if (imageBuilderConfig.getSelectImageCount() > 1) {
+      mBtnOk.setText(getString(
+          R.string.__lakimage_select_complete, /*imageBuilderConfig.getSelectImageCount()*/
+          mCurrentPosition + 1, imageBuilderConfig.getSelectImageCount()));
     } else {
       mBtnOk.setText(getString(R.string.__lakimage_complete));
     }

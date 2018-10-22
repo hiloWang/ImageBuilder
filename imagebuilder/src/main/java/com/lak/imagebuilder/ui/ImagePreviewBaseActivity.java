@@ -15,9 +15,6 @@ import com.lak.imagebuilder.util.imageloader.GlideImageLoader;
 import com.lak.imagebuilder.widget.ViewPagerFixed;
 import java.util.ArrayList;
 
-import static com.lak.imagebuilder.ImageBuilder.DEFAULT_MAX_COUNT;
-import static com.lak.imagebuilder.ImageBuilder.EXTRA_MAX_COUNT;
-
 public abstract class ImagePreviewBaseActivity extends BaseActivity {
 
   protected ImageBuilderConfig imageBuilderConfig;
@@ -42,8 +39,6 @@ public abstract class ImagePreviewBaseActivity extends BaseActivity {
         getIntent().getBooleanExtra(ImageBuilderConfig.EXTRA_FROM_WEAK_REFERENCE_ITEMS, true);
     isShowBottomBar =
         getIntent().getBooleanExtra(ImageBuilderConfig.EXTRA_FROM_SHOW_BOTTOM_BAR, true);
-    int maxCount = getIntent().getIntExtra(EXTRA_MAX_COUNT, DEFAULT_MAX_COUNT);
-    imageBuilderConfig.setSelectLimit(maxCount);
 
     if (isFromWeakReferenceItems) {
       // 默认方式：采用弱引用方式, 仅限于选择照片时启用，为了处理大量照片可能导致崩溃的问题。
