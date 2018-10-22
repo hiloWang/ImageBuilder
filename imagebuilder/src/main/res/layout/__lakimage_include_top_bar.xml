@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="48dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/__lakimage_color_primary_dark"
     android:clickable="true"
     >
@@ -15,6 +16,7 @@
       android:background="@drawable/__lakimage_selector_back_press"
       android:padding="12dp"
       app:srcCompat="@drawable/__lakimage_ic_arrow_back"
+      tools:ignore="VectorDrawableCompat"
       />
 
   <View
@@ -52,7 +54,7 @@
       android:minWidth="48dp"
       android:paddingLeft="16.0dp"
       android:paddingRight="16.0dp"
-      android:text="完成(0/3)"
+      android:text="完成(0/1)"
       android:textColor="#ffffff"
       android:textSize="14sp"
       />
@@ -67,5 +69,6 @@
       android:padding="12dp"
       android:visibility="gone"
       app:srcCompat="@drawable/__lakimage_ic_vector_delete"
+      tools:ignore="VectorDrawableCompat"
       />
 </RelativeLayout>
