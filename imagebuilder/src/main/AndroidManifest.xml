@@ -13,7 +13,9 @@
   <uses-permission android:name="android.permission.CAMERA"/>
 
   <application>
-    <activity android:name=".ui.BaseActivity"/>
+    <activity
+        android:name=".ui.BaseActivity"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     <activity
         android:name=".ui.ImageGridActivity"
         android:configChanges="orientation|screenSize"
